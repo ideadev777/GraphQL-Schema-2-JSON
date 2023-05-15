@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 8",
+
+  "compilerOptions": {
+    // https://www.typescriptlang.org/tsconfig#target
+    // ES6/ES2015 features are supported by Node v8
+    "target": "ES2015",
+    "lib": ["ES2015"],
+
+    "module": "commonjs",
+    "strict": true,
+    "declaration": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "outDir": "./dist",
+    "rootDir": ".",
+  },
+  "exclude": [
+    "node_modules",
+    // Don't try to compile the already compiled stuff
+    "./dist",
+    // Don't do anything with test files as they will be compiled by
+    // ts-jest
+    "**/*spec.ts",
+  ]
+}
